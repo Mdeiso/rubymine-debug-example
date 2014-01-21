@@ -1,28 +1,22 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Initial import of rubymine-debug-example
 
-Things you may want to cover:
+This project is designed to demonstrate that the invalid call to
+this_function_doesnt_exist will trigger a browser warning and won't
+appear inside RubyMine as a caught exception showing the line that
+execution stopped, which I'd prefer so I can immediately fix the
+issue.
 
-* Ruby version
+To reproduce
 
-* System dependencies
+ * Start RubyMine, import this project
+ * Start Debug: Development: rubymine-debug-example
+ * Visit http://localhost:3000
+ * You should get an error page 
 
-* Configuration
+NameError in WelcomeController#index
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+undefined local variable or method `this_function_doesnt_exist' for #<WelcomeController:0x00000004235718>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
